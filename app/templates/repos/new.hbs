@@ -1,0 +1,17 @@
+{{#modal-dialog close="toggleModal"
+                targetAttachment="center"
+                translucentOverlay=true}}
+
+  <p>
+    Nombre: {{input value=name placeholder="firefox-installer"}}
+  </p>
+
+<p>
+  {{#if name}}
+  <button {{action "createNewRepo" name}} class="btn btn-success-outline">Crear repositorio</button>
+  {{else}}
+  <button class="btn btn-success-outline" disabled=disabled>Crear repositorio</button>
+  {{/if}}
+</p>
+
+{{/modal-dialog}}

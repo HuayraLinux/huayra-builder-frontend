@@ -1,0 +1,46 @@
+<h2>Repositorios</h2>
+
+<div class="button-bar">
+  {{#link-to "repos.new" class="btn btn-primary-outline"}}Vincular un repositorio{{/link-to}}
+</div>
+
+
+<div class="table-responsive">
+<table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>URL</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+{{#if model}}
+
+<tbody>
+
+  {{#each model as |model|}}
+    <tr>
+      <td>{{model.name}}</td>
+      <td>{{model.url}}</td>
+      <td>{{#link-to "build" model}}ver{{/link-to}}</td>
+    </tr>
+  {{/each}}
+
+</tbody>
+
+{{else}}
+
+  <tbody>
+    <tr>
+      <td colspan=3>No hay repositorios para mostrar</td>
+    </tr>
+  </tbody>
+
+{{/if}}
+
+</table>
+</div>
+
+{{outlet}}

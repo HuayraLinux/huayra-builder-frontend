@@ -7,7 +7,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('playground');
-  this.route('about');
+  this.route('repos', function() {
+    this.route('new');
+  });
+  this.route('build', {path: '/build/:build_id'});
 });
 
 export default Router;
